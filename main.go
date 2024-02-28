@@ -52,6 +52,10 @@ func main() {
 			continue
 		}
 
+		if len(args) < 1 {
+			continue
+		}
+
 		switch args[0] {
 		case "h", "help":
 			fmt.Println("h, help           : show this help menu       : h")
