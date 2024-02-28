@@ -1,4 +1,4 @@
-package mansock
+package main
 
 import (
 	"bufio"
