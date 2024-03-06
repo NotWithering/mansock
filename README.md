@@ -3,6 +3,8 @@
 
 **ManSock** is a simple CLI program used to debug tcp/udp servers with an interactive command-line
 
+This program was inspired by GameMaker 8.2 sockets, which is why the commands are so similar. 
+
 ## Installing
 ```bash
 go install github.com/NotWithering/mansock@latest
