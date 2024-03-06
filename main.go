@@ -23,13 +23,21 @@ var config = map[string]any{
 
 // errors
 const (
-	errorCustom         string = "error: %s\n"
-	errorNEA            string = "error: not enough arguments"
-	errorSyntax         string = "error: syntax error"
-	errorUnknownCommand string = "error: unknown command"
+	errorCustom             string = "error: %s\n"
+	panicCustom             string = "panic: %s\n"
+	errorNEA                string = "error: not enough arguments"
+	errorSyntax             string = "error: syntax error"
+	errorUnknownCommand     string = "error: unknown command"
+	errorSocketDisconnected string = "error: socket not connected"
 )
 
 func main() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Printf(panicCustom, r)
+		}
+	}()
+
 	var socket net.Conn
 
 	buf := bytes.NewBuffer([]byte{})
@@ -91,6 +99,10 @@ func main() {
 				continue
 			}
 		case "cs", "closesocket":
+			if socket == nil {
+				fmt.Println(errorSocketDisconnected)
+				continue
+			}
 			if err := socket.Close(); err != nil {
 				fmt.Printf(errorCustom, err)
 				continue
@@ -138,7 +150,7 @@ func main() {
 			buf.Write(deflated.Bytes())
 		case "ws", "writesocket":
 			if socket == nil {
-				fmt.Println("socket not connected")
+				fmt.Println(errorSocketDisconnected)
 				continue
 			}
 			if _, err := socket.Write(buf.Bytes()); err != nil {
@@ -149,7 +161,7 @@ func main() {
 			exit = true
 		case "":
 		default:
-			fmt.Println("unknown command")
+			fmt.Println(errorUnknownCommand)
 		}
 	}
 	if socket != nil {
