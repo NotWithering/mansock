@@ -10,7 +10,7 @@ This program was inspired by GameMaker 8.2 sockets, which is why the commands ar
 go install github.com/NotWithering/mansock@latest
 ```
 ## Example
-```go
+```ruby
 $ ./udpserver &
 
 $ mansock
