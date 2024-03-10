@@ -1,12 +1,10 @@
-module github.com/notwithering/mansock
+module mansock
 
-go 1.21.6
-
-toolchain go1.22.0
+go 1.22.0
 
 require (
-	github.com/notwithering/argo v0.0.0-20240227020945-46b69b5f10f0
 	github.com/fatih/color v1.16.0
+	github.com/notwithering/argo v0.0.0-20240310193225-af9ef27cffe0
 )
 
 require (
