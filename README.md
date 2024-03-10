@@ -1,4 +1,4 @@
-# ManSock [![MIT License](https://img.shields.io/badge/License-MIT-a10b31)](https://github.com/NotWithering/mansock/blob/master/LICENSE)
+# ManSock [![MIT License](https://img.shields.io/badge/License-MIT-a10b31)](https://github.com/notwithering/mansock/blob/master/LICENSE)
 <img src="sock.png" width=150px alt="sock with roblox man face">
 
 **ManSock** is a simple CLI program used to debug tcp/udp servers with an interactive command-line
@@ -7,7 +7,7 @@ This program was inspired by GameMaker 8.2 sockets, which is why the commands ar
 
 ## Installing
 ```bash
-go install github.com/NotWithering/mansock@latest
+go install github.com/notwithering/mansock@latest
 ```
 ## Example
 ```ruby

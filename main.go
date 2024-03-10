@@ -12,7 +12,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/NotWithering/argo"
+	"github.com/fatih/color"
+	"github.com/notwithering/argo"
 )
 
 var config = map[string]any{
@@ -44,7 +45,12 @@ func main() {
 
 	var exit bool
 	for !exit {
-		fmt.Print("MANSOCK> ")
+		var ps1 string
+		ps1 += color.New(color.FgHiBlue).Sprint("MANSOCK")
+		ps1 += color.New(color.FgHiBlack).Sprint("> ")
+		ps1 += color.New(color.Reset).Sprint()
+
+		fmt.Print(ps1)
 
 		reader := bufio.NewReader(os.Stdin)
 		command, err := reader.ReadString('\n')
