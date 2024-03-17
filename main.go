@@ -12,8 +12,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/fatih/color"
 	"github.com/notwithering/argo"
+	"github.com/notwithering/sgr"
 )
 
 var config = map[string]any{
@@ -32,6 +32,10 @@ const (
 	errorSocketDisconnected string = "error: socket not connected"
 )
 
+const (
+	ps1 string = sgr.FgHiBlue + "MANSOCK" + sgr.FgHiBlack + "> " + sgr.Reset
+)
+
 func main() {
 	defer func() {
 		if r := recover(); r != nil {
@@ -45,11 +49,6 @@ func main() {
 
 	var exit bool
 	for !exit {
-		var ps1 string
-		ps1 += color.New(color.FgHiBlue).Sprint("MANSOCK")
-		ps1 += color.New(color.FgHiBlack).Sprint("> ")
-		ps1 += color.New(color.Reset).Sprint()
-
 		fmt.Print(ps1)
 
 		reader := bufio.NewReader(os.Stdin)
