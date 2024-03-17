@@ -1,4 +1,4 @@
-module mansock
+module github.com/notwithering/mansock
 
 go 1.22.0
 
