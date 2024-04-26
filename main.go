@@ -182,7 +182,7 @@ func main() {
 func convert(value string, targetType string) (any, error) {
 	switch targetType {
 	case "int", "i":
-		result, err := strconv.Atoi(value)
+		result, err := strconv.ParseInt(value, 10, 32)
 		return result, err
 	case "int8", "i8":
 		result, err := strconv.ParseInt(value, 10, 8)
