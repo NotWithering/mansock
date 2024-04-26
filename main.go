@@ -33,7 +33,7 @@ const (
 )
 
 const (
-	ps1 string = sgr.FgHiBlue + "MANSOCK" + sgr.FgHiBlack + "> " + sgr.Reset
+	ps1 string = sgr.Underline + "MANSOCK" + sgr.NotUnderlined + sgr.FgHiBlack + "> " + sgr.Reset
 )
 
 func main() {
