@@ -82,6 +82,9 @@ func main() {
 			fmt.Println("ws, writesocket   : write to the socket       : ws")
 			fmt.Println("cs, closesocket   : close the socket          : cs")
 			fmt.Println("e, exit           : exits the program         : e")
+			fmt.Println("")
+			fmt.Println("types are interchangle with shorter versions")
+			fmt.Println("ex. int=i string=s uint8=u8")
 		case "s", "set": // SET key type value
 			if len(args) < 4 {
 				fmt.Println(errorNEA)
