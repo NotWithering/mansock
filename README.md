@@ -2,7 +2,7 @@
 
 # ManSock
 
-[![MIT License](https://img.shields.io/badge/License-MIT-a10b31)](https://github.com/notwithering/mansock/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-a10b31)](https://github.com/notwithering/mansock/blob/main/LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/notwithering/mansock)](https://goreportcard.com/report/github.com/notwithering/mansock)
 
 <img src="sock.png" width=150px alt="sock with roblox man face">
